@@ -6,7 +6,7 @@ m.orders_id
 , quantity
 ,purchase_cost
 , margin
-from {{ ref('int_orders_margin') }} m
+from {{ ref('int_sales_margin') }} m
 left join {{ ref('stg_raw__ship') }} sh
 on m.orders_id = sh.orders_id
 group by m.orders_id
