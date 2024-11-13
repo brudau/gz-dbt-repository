@@ -30,6 +30,19 @@ sources:
             tests:
               - unique
               - not_null
+      - name: adw
+        identifier: raw_gz_adwords
+        description: adwords campaign
+      - name: bing
+        identifier: raw_gz_bing
+        description: bing campaign 
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: criteo campaign
+      - name: face
+        identifier: raw_gz_facebook
+        description: facebook campaign
+          
 models:
    - name: int_sales_margin
      description: margin calculation per order
@@ -62,4 +75,12 @@ models:
          description: sum of quantity per order
          tests:
            - not_null
-     
+   - name: int_campaigns
+     description: union campaigns
+     columns:
+       - name: "(date_date || '-' || campaign_key)"
+         description: primary key
+         tests:
+           - unique
+           - not_null
+               
