@@ -83,4 +83,13 @@ models:
          tests:
            - unique
            - not_null
-               
+   - name: finance_campaigns_day
+     description: campaign per day
+     columns:
+        - name: date_date
+          description: primary key
+          tests:
+            - unique
+            - not_null
+                
+                        
